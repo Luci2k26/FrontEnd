@@ -1,0 +1,162 @@
+/* --- Modelo de Cajas Universal --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Tipografía y Colores Base --- */
+html, body {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f5f7;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Hace que el contenido principal crezca y empuje el footer hacia abajo */
+main {
+    flex: 1; 
+}
+
+/* --- Uso de Flexbox (Navegación y Footer) --- */
+header {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Selector avanzado :hover */
+nav a:hover {
+    color: #ffffff;
+}
+
+/* --- Estructura Principal --- */
+.banner {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #0f3460;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* --- Uso de CSS Grid (Catálogo de productos) --- */
+.products-container {
+    display: grid;
+    /* Grid adaptable automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- Modelo de cajas y estilización en Tarjetas --- */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Selector avanzado nth-child para alternar sutilmente colores */
+.product-card:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.product-card h3 {
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e94560;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d13a52;
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* Asegura que el footer se mantenga al final de la página */
+}
+
+/* --- Diseño Responsivo (Media Queries) --- */
+/* Dispositivos móviles y tablets pequeñas */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .banner {
+        padding: 20px 10px;
+    }
+}
